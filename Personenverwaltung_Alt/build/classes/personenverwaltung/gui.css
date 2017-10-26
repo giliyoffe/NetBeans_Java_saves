@@ -1,0 +1,18 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    -fx-font-family:sanserif;
+    -fx-font-size: 1.2em;
+}
+
+#idStatus {
+    -fx-background-color: white;    
+    -fx-boarder-color: grey;
+}
+
+#tp {
+    -fx-background-color: white;
+    -fx-font-color: black;
+}

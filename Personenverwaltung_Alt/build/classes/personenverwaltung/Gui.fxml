@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane"
+            styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="personenverwaltung.GuiController">
+    <stylesheets>
+        <URL value="@gui.css"/>
+    </stylesheets>
+    <children>
+        <GridPane layoutX="20" layoutY="20" hgap="20" vgap="20">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" />    <!-- Ausrichtung der 1. Spalte -->
+                <ColumnConstraints prefWidth="200" />       <!-- Breite der 2. Spalte -->
+            </columnConstraints>
+            <Label text="Personennummer:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+            <Label text="Vorname:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+            <Label text="Nachname:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+            <Label text="Geburtstag:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+            <TextField fx:id="tfNummer" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+            <TextField fx:id="tfVorname" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+            <TextField fx:id="tfNachname" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+            <DatePicker fx:id="dpGeburtsdatum" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            <Button text="Neu"  GridPane.rowIndex="0" GridPane.columnIndex="2"
+                    fx:id="btnNeu" onAction="#handleNeu" prefWidth="100" >
+                <tooltip><Tooltip fx:id="tipNeu" id="tp" /> </tooltip>
+            </Button> 
+            <Button text="Ändern"  GridPane.rowIndex="1" GridPane.columnIndex="2"
+                    fx:id="btnAendern" onAction="#handleAendern" prefWidth="100" >
+                <tooltip><Tooltip fx:id="tipAendern" id="tp" /> </tooltip>
+            </Button> 
+            <Button text="Löschen"  GridPane.rowIndex="2" GridPane.columnIndex="2"
+                    fx:id="btnLoeschen" onAction="#handleLoeschen" prefWidth="100">
+                    <tooltip><Tooltip fx:id="tipLoeschen" id="tp" /> </tooltip>
+            </Button> 
+            <Button text="Beenden"  GridPane.rowIndex="3" GridPane.columnIndex="2"
+                    fx:id="btnBeenden" onAction="#handleBeenden" prefWidth="100" >
+                <tooltip><Tooltip fx:id="tipBeenden" id="tp" /> </tooltip>
+            </Button> 
+        </GridPane>
+        <HBox layoutX="20" layoutY="220">
+            <Label id="idlStatus" text="Statuszeile Statuszeile Statuszeile" 
+                fx:id="lblStatus"   prefWidth="450"/>
+        </HBox> 
+        <ScrollPane layoutX="20" layoutY="260" prefWidth="450">
+            <TableView fx:id="tblPerson" prefHeight="200">
+                <columns>
+                    <TableColumn fx:id="colNummer" text="Nummer" prefWidth="80"/> 
+                    <TableColumn fx:id="colVorname" text="Vorname" prefWidth="120"/> 
+                    <TableColumn fx:id="colNachname" text="Nachname" prefWidth="120"/> 
+                    <TableColumn fx:id="colGeburtsdatum" text="Geburtsdatum" prefWidth="126"/> 
+                </columns>
+            </TableView>
+        </ScrollPane>
+    </children>
+</AnchorPane>
